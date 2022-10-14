@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  public title = 'app';
+
+  constructor() {
+  }
+  public a = function(){return 9;};
+  public b = () => {return 12;}
+
+  public actualDate() {
+    return Date.now();
+  }
+  //private niedziala = "cos";
+  
+
 }
