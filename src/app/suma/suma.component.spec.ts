@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PorscheComponent } from './porsche.component';
+import { SumaComponent } from './suma.component';
 
-describe('PorscheComponent', () => {
-  let component: PorscheComponent;
-  let fixture: ComponentFixture<PorscheComponent>;
+describe('SumaComponent', () => {
+  let component: SumaComponent;
+  let fixture: ComponentFixture<SumaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PorscheComponent ]
+      declarations: [ SumaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PorscheComponent);
+    fixture = TestBed.createComponent(SumaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

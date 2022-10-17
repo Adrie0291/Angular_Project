@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Produkt, SklepService } from './sklep.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public ladujeDane = true; 
   public title = 'app';
+  public pobraneProdukty: Produkt[];
 
-  constructor() {
+  constructor(private sklep: SklepService ) {
+    this.pobraneProdukty = [];
+    console.log("przed zawolaniem metody")
+    let produkty =  this.sklep.pobierzProdukty();
+    console.log('Po zawolaniu metody')
+    produkty.subscribe( (tablicaProduktow)=> {
+      this.ladujeDane = false;
+      this.pobraneProdukty = tablicaProduktow
+      console.log('pobrano produkty')
+      console.log(produkty);
+        })
+  }
+
+  public dodajDoKoszyka(id: string) {
+    console.log(id);
+    this.sklep.doKoszyka(id);
   }
   public a = function(){return 9;};
   public b = () => {return 12;}
@@ -20,3 +38,4 @@ export class AppComponent {
   
 
 }
+//

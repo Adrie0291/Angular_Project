@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-naglowek',
@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NaglowekComponent implements OnInit {
 
+  @Input('nazwaFirmy')
+  //public tytul = 'Tytul jakiegos komponentu';
+  public tytul!: string;
+  @Input('koszyk')
+  public koszyk!: boolean;
+  
   constructor() { }
-
+  
+  public actualDate(){
+    return Date.now();
+  }
   ngOnInit(): void {
   }
 

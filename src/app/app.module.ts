@@ -4,21 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NaglowekComponent } from './naglowek/naglowek.component';
-import { SosnaComponent } from './sosna/sosna.component';
-import { PorscheComponent } from './porsche/porsche.component';
+import { SumaComponent } from './suma/suma.component';
+import { ResetComponent } from './reset/reset.component';
+import { MultiService } from './multi.service';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { KoszykComponent } from './koszyk/koszyk.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NaglowekComponent,
-    SosnaComponent,
-    PorscheComponent
+    SumaComponent,
+    ResetComponent,
+    KoszykComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [MultiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
